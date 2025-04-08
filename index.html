@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Improved Sidebar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+
+<!-- 
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBxvT9H3Av0JdpVOL773jQcelMCgjcSlLk",
+      authDomain: "ar-website-ec7d4.firebaseapp.com",
+      projectId: "ar-website-ec7d4",
+      storageBucket: "ar-website-ec7d4.firebasestorage.app",
+      messagingSenderId: "246698566314",
+      appId: "1:246698566314:web:529e24602097caac5da6d3",
+      measurementId: "G-M3K6N1Q38X"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script> -->
+
+
+
+
+
+</head>
+
+<body>
+  <label class="hamburger-menu">
+    <input type="checkbox">
+  </label>
+  <aside class="sidebar">
+    <nav>
+      <ul class="nav-list">
+        <li class="font"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+        <li class="font">
+          <a href="#"><i class="fas fa-film"></i> Anime</a>
+          <ul class="submenu">
+            <li><a href="#">Reviews</a></li>
+            <li><a href="#">News</a></li>
+          </ul>
+        </li>
+        <li class="font"><a href="#"><i class="fas fa-video"></i> Movies</a></li>
+        <li class="font"><a href="#"><i class="fas fa-laptop"></i> Tech</a></li>
+        <li class="font"><a href="#"><i class="fas fa-book"></i> Study</a></li>
+        <li class="font"><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+        <!-- <li class="font"><a href="#" class="premium"><i class="fas fa-star"></i> Premium</a></li> -->
+      </ul>
+    </nav>
+    <!-- <div class="ad-space">
+      <a href="#"><img src="https://via.placeholder.com/150x100" alt="Ad"></a>
+    </div> -->
+
+    <header>
+      <div class="header-container">
+        <div class="logo">
+
+        </div>
+        <div class="search-bar">
+          <input type="text" id="searchInput" onkeyup="searchContent()" placeholder="Search">
+          <button class="button"><i class="fas fa-search"></i></button>
+        </div>
+      </div>
+    </header>
+  </aside>
+  <main>
+
+
+    <section class="content-section">
+
+      <div class="content-grid" style="display: none;">
+        <!--Anime-->
+        <div class="content-card" data-category="anime">
+          <img src="wp6695773-hd-4k-dark-anime-wallpapers.jpg" alt="Anime" srcset="">
+          <h3>Anime Title</h3>
+          <p>A story about anime..</p>
+          <a href="#" class="btn">Read more</a>
+        </div>
+        <!-- movies card -->
+        <div class="content-card" data-category="movie">
+          <img src="wp6695773-hd-4k-dark-anime-wallpapers.jpg" alt="Movie" srcset="">
+          <h3>Movie Title</h3>
+          <p>A story about Movie..</p>
+          <a href="#" class="btn">Read more</a>
+        </div>
+        <!-- tech card -->
+        <div class="content-card" data-category="tech">
+          <img src="wp6695773-hd-4k-dark-anime-wallpapers.jpg" alt="Tech" srcset="">
+          <h3>Tech Title</h3>
+          <p>A story about Tech..</p>
+          <a href="#" class="btn">Read more</a>
+        </div>
+        <div class="content-card" data-category="study">
+          <img src="wp6695773-hd-4k-dark-anime-wallpapers.jpg" alt="Study" srcset="">
+          <h3>Study Title</h3>
+          <p>A story about Study..</p>
+          <a href="#" class="btn">Read more</a>
+        </div>
+    </section>
+    </div>
+
+    <div class="loader">
+
+    </div>
+  </main>
+
+
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Anime</a></li>
+          <li><a href="#">Movies</a></li>
+          <li><a href="#">Tech</a></li>
+          <li><a href="#">Study</a></li>
+        </ul>
+      </div>
+      <!-- Privacy Policy -->
+      <div class="footer-section">
+        <h3>Privacy Policy</h3>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <!-- Social Media -->
+      <div class="footer-section">
+        <h3>Social media links</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <!-- Contact Us -->
+      <div class="footer-section">
+        <h3>Contact us</h3>
+        <p>Email: Viveksah200515@gmail.com</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 AR. All rights reserved</p>
+      <button class="back-to-top">Back to Top</button>
+    </div>
+
+
+    <!-- <section class="contact-section">
+      <h2>Contact us</h2>
+      <form id="contact-Form">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea  name="message" placeholder="Your Message" required> </textarea>
+        <button type="submit">Send message</button>
+      </form>
+    </section> -->
+  </footer>
+  <script src="style.js"></script>
+
+
+
+</body>
+
+</html>
