@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Improved Sidebar</title>
+  <title>{{ site.title }}</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 
@@ -82,15 +82,18 @@
 
 
     <section class="content-section">
+      <h1>{{ site.title }}: Your Hub for Anime, Movies, and Tech Blogs</h1>
 
       <div class="content-grid" style="display: none;">
         <!--Anime-->
         <div class="content-card" data-category="anime">
-          <img src="wp6695773-hd-4k-dark-anime-wallpapers.jpg" alt="Anime" srcset="">
-          <h3>Anime Title</h3>
-          <p>A story about anime..</p>
-          <a href="#" class="btn">Read more</a>
+          {% for post in site.posts %}
+          <img src="{{ post.image }}" alt="{{ post.category }}" loading="lazy">
+          <h3>{{ post.title }}</h3>
+            <p>{{ post.description }}</p>
+            <a href="{{ post.url }}" class="btn">Read More</a>
         </div>
+        {% endfor %}
         <!-- movies card -->
         <div class="content-card" data-category="movie">
           <img src="wp6695773-hd-4k-dark-anime-wallpapers.jpg" alt="Movie" srcset="">

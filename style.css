@@ -494,3 +494,15 @@ header {
   border-radius: 5px;
   cursor: pointer;
 } */
+
+
+.post-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.post-section img {
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
