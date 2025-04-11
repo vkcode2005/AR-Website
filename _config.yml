@@ -20,11 +20,12 @@
 
 title: AR Website
 description: Your Hub for Anime, Movies, and Tech Blogs
-baseurl: "" # Netlify pe blank chhod do
+baseurl: ""
 url: "https://your-site-name.netlify.app"
 collections:
   posts:
     output: true
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
