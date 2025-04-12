@@ -1,4 +1,8 @@
 # Welcome to Jekyll!
+title: Your Hub for Anime, Movies, and Tech Blogs
+description: A blog about anime, movies, tech, and study.
+baseurl: "" # agar Netlify pe subpath hai toh adjust kar
+url: "https://ar24.netlify.app" # apna Netlify URL daal
 #
 # This config file is meant for settings that affect your whole blog, values
 # which you are expected to set up once and rarely edit after that. If you find
