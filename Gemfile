@@ -1,9 +1,12 @@
 source "https://rubygems.org"
+
 gem "jekyll", "~> 4.3.3"
 gem "bundler", "~> 2.6.7"
-gem "webrick"  # Jekyll server ke liye
+gem "webrick"
 gem "nokogiri", "~> 1.16"
-
+gem gem "jekyll-paginate"  # Line 9
+gem "jekyll-feed"
+gem "jekyll-seo-tag"
 
 ruby "3.4.2"
 # Hello! This is where you manage which Jekyll version is used to run.
@@ -24,6 +27,7 @@ gem "minima", "~> 2.5"
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
 end
+
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
