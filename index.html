@@ -1,9 +1,3 @@
----
-layout: default
-title: AR-Hub of Everything
----
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,18 +59,18 @@ title: AR-Hub of Everything
 
 
     <section class="content-section">
-      <h1>{{ site.title }}: Your Hub for Anime, Movies, and Tech Blogs</h1>
+      <h1>Your Hub for Anime, Movies, and Tech Blogs</h1>
 
       <div class="content-grid" style="display: none;">
         <!--Anime-->
         <div class="content-card" data-category="anime">
-          {% for post in site.posts %}
+          <!-- {% for post in site.posts %}
           <img src="{{ post.image }}" alt="{{ post.category }}" loading="lazy">
-          <h3>{{ post.title }}</h3>
-            <p>{{ post.description }}</p>
-            <a href="{{ post.url }}" class="btn">Read More</a>
+          <h3>{{ post.title }}</h3> -->
+            <!-- <p>{{ post.description }}</p> -->
+            <a href="" class="btn">Read More</a>
         </div>
-        {% endfor %}
+        <!-- {% endfor %} -->
         <!-- movies card -->
         <div class="content-card" data-category="movie">
           <img src="wp6695773-hd-4k-dark-anime-wallpapers.jpg" alt="Movie" srcset="">
@@ -98,7 +92,7 @@ title: AR-Hub of Everything
           <a href="#" class="btn">Read more</a>
         </div>
     </section>
-    </div>
+    
 
     <div class="loader">
 
@@ -144,17 +138,6 @@ title: AR-Hub of Everything
       <p>© 2025 AR. All rights reserved</p>
       <button class="back-to-top">Back to Top</button>
     </div>
-
-
-    <!-- <section class="contact-section">
-      <h2>Contact us</h2>
-      <form id="contact-Form">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea  name="message" placeholder="Your Message" required> </textarea>
-        <button type="submit">Send message</button>
-      </form>
-    </section> -->
   </footer>
   <script src="style.js"></script>
 
