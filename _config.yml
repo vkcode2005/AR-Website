@@ -1,0 +1,52 @@
+# ========================
+# Jekyll Configuration File
+# AR-Website (Anime/Tech/Movies)
+# ========================
+
+# Site Identity
+title: "AR Hub - Anime, Tech & Movies"
+description: "Your ultimate destination for anime reviews, tech blogs and movie updates!"
+url: "https://ar247.netlify.app"  # Replace with your URL
+baseurl: ""  # Leave empty or use "/repo-name" for GitHub Pages
+
+# Technical Settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+timezone: Asia/Kolkata  # IST
+
+# Build Settings
+collections_dir: .
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Default Front Matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      comments: true
+      category: "general"
+      tags: []
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title.html
+
+  tags:
+    output: true
+    permalink: /tags/:name/
+
+# Sitemap (SEO)
+sitemap:
+  changefreq: weekly
+  priority: 0.8
+
+# Developer Mode (Safe for Netlify/GitHub)
+safe: true
+incremental: false
