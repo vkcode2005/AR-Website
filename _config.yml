@@ -9,6 +9,9 @@ description: "Your ultimate destination for anime reviews, tech blogs and movie 
 url: "https://ar247.netlify.app"  # Replace with your URL
 baseurl: ""  # Leave empty or use "/repo-name" for GitHub Pages
 
+include:
+  - admin
+
 # Technical Settings
 markdown: kramdown
 highlighter: rouge
