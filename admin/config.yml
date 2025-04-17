@@ -3,14 +3,14 @@ backend:
   branch: main
 
 media_folder: "assets/images/uploads"
-public_folder: "/assets/images/uploads"  # Ye line add karo
+public_folder: "/assets/images/uploads"
 
 collections:
   - name: "posts"
     label: "Posts"
     folder: "_posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"  # Optional, but best practice for Jekyll
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     extension: "md"
     format: "yaml-frontmatter"
     fields:
