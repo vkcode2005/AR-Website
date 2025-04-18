@@ -5,3 +5,8 @@
 [build.environment]
   RUBY_VERSION = "3.2.2"
   JEKYLL_ENV = "production"
+
+  [[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200 
