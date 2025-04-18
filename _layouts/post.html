@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .post-meta {
+      color: #666;
+      font-size: 0.9em;
+      margin-bottom: 20px;
+    }
+    .tags a {
+      text-decoration: none;
+      color: #0077cc;
+      margin-right: 8px;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta">
+      Published on {{ page.date | date: "%B %d, %Y" }}
+    </div>
+
+    <div class="post-content">
+      {{ content }}
+    </div>
+
+    {% if page.tags %}
+    <div class="tags">
+      Tags:
+      {% for tag in page.tags %}
+        <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <a href="/" class="back-link">← Back to Home</a>
+  </article>
+</body>
+</html>
