@@ -1,24 +1,33 @@
+// Sidebar link click handler
 document.querySelectorAll('.sidebar a').forEach(link => {
     link.addEventListener('click', () => {
-        document.querySelector('.hamburger-menu input').checked = false;
+        const checkbox = document.querySelector('.hamburger-menu input');
+        if (checkbox) checkbox.checked = false;
     });
 });
 
+// Click outside sidebar closes menu
 document.addEventListener('click', function (e) {
     const sidebar = document.querySelector('.sidebar');
     const hamburger = document.querySelector('.hamburger-menu');
-    if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
-        document.querySelector('.hamburger-menu input').checked = false;
+    const checkbox = document.querySelector('.hamburger-menu input');
+
+    if (sidebar && hamburger && checkbox) {
+        if (!sidebar.contains(e.target) && !hamburger.contains(e.target)) {
+            checkbox.checked = false;
+        }
     }
 });
 
+// Search filter for content cards
 function searchContent() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
+    const inputEl = document.getElementById('searchInput');
+    const input = inputEl ? inputEl.value.toLowerCase() : "";
     const cards = document.querySelectorAll('.content-card');
 
     cards.forEach(card => {
-        const title = card.querySelector('h3').textContent.toLowerCase();
-        const description = card.querySelector('p').textContent.toLowerCase();
+        const title = (card.querySelector('h3')?.textContent || "").toLowerCase();
+        const description = (card.querySelector('p')?.textContent || "").toLowerCase();
 
         if (title.includes(input) || description.includes(input)) {
             card.style.display = 'block';
@@ -27,33 +36,38 @@ function searchContent() {
         }
     });
 }
+
+// Loader hide and content show
 window.addEventListener('load', () => {
     setTimeout(() => {
-        document.querySelector('.loader').style.display = 'none';
+        const loader = document.querySelector('.loader');
+        const contentGrid = document.querySelector('.content-grid');
 
-        document.querySelector('.content-grid').style.display = 'grid';
-
+        if (loader) loader.style.display = 'none';
+        if (contentGrid) contentGrid.style.display = 'grid';
     }, 1000);
 });
 
+// Back to top button
 const backToTopBtn = document.querySelector('.back-to-top');
 
-backToTopBtn.addEventListener('click', () =>{
-    window.scrollTo({top: 0, behavior : 'smooth'});
-});
+if (backToTopBtn) {
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-window.addEventListener('scroll', () =>{
-    if(window.scrollY > 300){
-        backToTopBtn.style.display ='block';
-    } else{
-        backToTopBtn.style.display ='none';
-    }
-});
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+}
 
+// Netlify Identity init
 document.addEventListener('DOMContentLoaded', function () {
-    // Check if netlifyIdentity is available
     if (window.netlifyIdentity) {
-        // Initialize the widget
         window.netlifyIdentity.on("init", (user) => {
             if (!user) {
                 window.netlifyIdentity.on("login", () => {
@@ -63,11 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         window.netlifyIdentity.init();
     } else {
-        // Wait until the netlifyIdentity script loads
         const checkInterval = setInterval(() => {
             if (window.netlifyIdentity) {
                 clearInterval(checkInterval);
-
                 window.netlifyIdentity.on("init", (user) => {
                     if (!user) {
                         window.netlifyIdentity.on("login", () => {
@@ -77,6 +89,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
                 window.netlifyIdentity.init();
             }
-        }, 100); // Check every 100ms
+        }, 100);
     }
 });
