@@ -50,9 +50,7 @@ window.addEventListener('scroll', () =>{
     }
 });
 
-// Initialize Netlify Identity
-document.addEventListener('DOMContentLoaded', function() {
-    netlifyIdentity.init();
+
 
     // Handle form submission for creating new posts
     document.getElementById('postForm').addEventListener('submit', function(event) {
