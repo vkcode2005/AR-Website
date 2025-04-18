@@ -50,28 +50,33 @@ window.addEventListener('scroll', () =>{
     }
 });
 
-// Initialize Netlify Identity
-document.addEventListener('DOMContentLoaded', function() {
-    netlifyIdentity.init();
+document.addEventListener('DOMContentLoaded', function () {
+    // Check if netlifyIdentity is available
+    if (window.netlifyIdentity) {
+        // Initialize the widget
+        window.netlifyIdentity.on("init", (user) => {
+            if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                    document.location.href = "/admin/";
+                });
+            }
+        });
+        window.netlifyIdentity.init();
+    } else {
+        // Wait until the netlifyIdentity script loads
+        const checkInterval = setInterval(() => {
+            if (window.netlifyIdentity) {
+                clearInterval(checkInterval);
 
-    // Handle form submission for creating new posts
-    document.getElementById('postForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-
-        const title = document.getElementById('title').value;
-        const content = document.getElementById('content').value;
-        const tags = document.getElementById('tags').value.split(',');
-
-        // Logic to create a new post
-        const newPost = {
-            title: title,
-            body: content,
-            tags: tags,
-            date: new Date().toISOString()
-        };
-
-        // Send the new post data to the backend (this part will depend on your backend setup)
-        // Example: fetch('/api/posts', { method: 'POST', body: JSON.stringify(newPost) })
-        console.log('New Post Created:', newPost);
-    });
+                window.netlifyIdentity.on("init", (user) => {
+                    if (!user) {
+                        window.netlifyIdentity.on("login", () => {
+                            document.location.href = "/admin/";
+                        });
+                    }
+                });
+                window.netlifyIdentity.init();
+            }
+        }, 100); // Check every 100ms
+    }
 });
