@@ -1,6 +1,8 @@
 ---
-title: "Attack on Titan Review"
-tags: ["anime", "shonen"]  # Ye tags add karo
+title: Attack on Titan Review
+tags:
+  - anime
+  - shonen
 ---
      title: "Attack on Titan Final Season Review"
      date: 2024-06-15
