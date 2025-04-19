@@ -1,62 +1,54 @@
----
-layout: default
----
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
       max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
+      margin: 0 auto;
+      padding: 20px;
     }
-    h1 {
-      font-size: 2em;
+    .post-title {
+      font-size: 2rem;
       margin-bottom: 10px;
     }
-    .post-meta {
-      color: #666;
-      font-size: 0.9em;
-      margin-bottom: 20px;
+    .post-date {
+      color: gray;
+      font-size: 0.9rem;
     }
-    .tags a {
-      text-decoration: none;
-      color: #0077cc;
-      margin-right: 8px;
+    .post-tags {
+      margin-top: 10px;
     }
-    .back-link {
-      display: inline-block;
-      margin-top: 40px;
+    .post-tags span {
+      background-color: #eee;
+      padding: 3px 8px;
+      margin-right: 5px;
+      border-radius: 4px;
+      font-size: 0.8rem;
     }
   </style>
 </head>
 <body>
-  <article>
-    <h1>{{ page.title }}</h1>
-    <div class="post-meta">
-      Published on {{ page.date | date: "%B %d, %Y" }}
-    </div>
+  <h1 class="post-title">{{ page.title }}</h1>
+  <p class="post-date">📅 {{ page.date | date: "%B %d, %Y" }}</p>
 
-    <div class="post-content">
-      {{ content }}
-    </div>
+  {% if page.tags %}
+  <div class="post-tags">
+    🏷 Tags:
+    {% for tag in page.tags %}
+      <span>{{ tag }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
 
-    {% if page.tags %}
-    <div class="tags">
-      Tags:
-      {% for tag in page.tags %}
-        <a href="/tags/{{ tag | slugify }}/">{{ tag }}</a>
-      {% endfor %}
-    </div>
-    {% endif %}
+  <hr>
 
-    <a href="/" class="back-link">← Back to Home</a>
-  </article>
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <p><a href="/">← Back to Home</a></p>
 </body>
 </html>
