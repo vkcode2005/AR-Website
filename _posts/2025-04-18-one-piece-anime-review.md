@@ -1,7 +1,8 @@
 ---
+layout : post
 title: One Piece Anime Review
 date: 2025-04-17
-layout: post
+
 tags:
   - anime
   - onepiece
