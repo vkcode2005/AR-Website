@@ -7,7 +7,7 @@
 title: "AR Hub - Anime, Tech & Movies"
 description: "Your ultimate destination for anime reviews, tech blogs and movie updates!"
 url: "https://ar247.netlify.app"  # Replace with your URL
-baseurl: ""  # Leave empty or use "/repo-name" for GitHub Pages
+baseurl: ""  # Leave empty for Netlify
 
 include:
   - admin
@@ -16,7 +16,7 @@ include:
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
-timezone: Asia/Kolkata  # IST
+timezone: Asia/Kolkata
 
 # Build Settings
 collections_dir: .
@@ -39,17 +39,17 @@ defaults:
 collections:
   posts:
     output: true
-    permalink: /:categories/:year/:month/:day/:title.html
+    permalink: /:categories/:year/:month/:day/:title/
 
   tags:
     output: true
     permalink: /tags/:name/
 
-# Sitemap (SEO)
+# Sitemap
 sitemap:
   changefreq: weekly
   priority: 0.8
 
-# Developer Mode (Safe for Netlify/GitHub)
+# Developer Mode
 safe: true
 incremental: false
