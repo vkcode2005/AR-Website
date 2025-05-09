@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
 
         if (loader) loader.style.display = 'none';
         if (contentGrid) contentGrid.style.display = 'grid';
-    }, 1000);
+    }, 100);
 });
 
 // Back to top button
