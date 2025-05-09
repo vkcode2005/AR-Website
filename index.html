@@ -7,15 +7,9 @@
   <title>AR-HUb of Everything</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <!-- Head section mein -->
   <link href="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.css" rel="stylesheet" />
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
   <script src="/assets/js/style.js"></script>
-
-
-
-
 </head>
 
 <body>
@@ -37,18 +31,12 @@
         <li class="font"><a href="#"><i class="fas fa-laptop"></i> Tech</a></li>
         <li class="font"><a href="#"><i class="fas fa-book"></i> Study</a></li>
         <li class="font"><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
-        <!-- <li class="font"><a href="#" class="premium"><i class="fas fa-star"></i> Premium</a></li> -->
       </ul>
     </nav>
-    <!-- <div class="ad-space">
-      <a href="#"><img src="https://via.placeholder.com/150x100" alt="Ad"></a>
-    </div> -->
 
     <header>
       <div class="header-container">
-        <div class="logo">
-
-        </div>
+        <div class="logo"></div>
         <div class="search-bar">
           <input type="text" id="searchInput" onkeyup="searchContent()" placeholder="Search">
           <button class="button"><i class="fas fa-search"></i></button>
@@ -56,54 +44,58 @@
       </div>
     </header>
   </aside>
+
   <main>
-
-
     <section class="content-section">
       <h1>Your Hub for Anime, Movies, and Tech Blogs</h1>
 
+      <!-- Yahi par blog posts ka list dikhayenge -->
+      <div class="blog-posts">
+        <h2>Latest Blog Posts</h2>
+        <ul>
+          {% for post in site.posts %}
+            <li>
+              <a href="{{ post.url }}">{{ post.title }}</a> — {{ post.date | date: "%B %d, %Y" }}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <!-- Tumhara pehle se content cards -->
       <div class="content-grid" style="display: none;">
-        <!--Anime-->
         <div class="content-card" data-category="anime">
-
           <img src="#" alt="#" loading="lazy">
-          <!-- <h3>{{ post.title }}</h3> --> -->
-
           <a href="" class="btn">Read More</a>
         </div>
-        <!-- {% endfor %} -->
-        <!-- movies card -->
+
         <div class="content-card" data-category="movie">
           <img src="#" alt="Movie" srcset="">
           <h3>Movie Title</h3>
           <p>A story about Movie..</p>
           <a href="#" class="btn">Read more</a>
         </div>
-        <!-- tech card -->
+
         <div class="content-card" data-category="tech">
           <img src="#" alt="Tech" srcset="">
           <h3>Tech Title</h3>
           <p>A story about Tech..</p>
           <a href="#" class="btn">Read more</a>
         </div>
+
         <div class="content-card" data-category="study">
           <img src="#" alt="Study" srcset="">
           <h3>Study Title</h3>
           <p>A story about Study..</p>
           <a href="#" class="btn">Read more</a>
         </div>
+      </div>
     </section>
 
-
-    <div class="loader">
-
-    </div>
+    <div class="loader"></div>
   </main>
-
 
   <footer class="footer">
     <div class="footer-container">
-      <!-- Quick Links -->
       <div class="footer-section">
         <h3>Quick links</h3>
         <ul>
@@ -114,12 +106,12 @@
           <li><a href="#">Study</a></li>
         </ul>
       </div>
-      <!-- Privacy Policy -->
+
       <div class="footer-section">
         <h3>Privacy Policy</h3>
         <a href="#">Privacy Policy</a>
       </div>
-      <!-- Social Media -->
+
       <div class="footer-section">
         <h3>Social media links</h3>
         <div class="social-links">
@@ -129,22 +121,18 @@
           <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
-      <!-- Contact Us -->
+
       <div class="footer-section">
         <h3>Contact us</h3>
         <p>Email: Viveksah200515@gmail.com</p>
       </div>
     </div>
+
     <div class="footer-bottom">
       <p>© 2025 AR. All rights reserved</p>
       <button class="back-to-top">Back to Top</button>
     </div>
   </footer>
-  
-  <!-- Body ke end mein -->
-
-
-
 </body>
 
 </html>
